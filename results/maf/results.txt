@@ -1,0 +1,494 @@
+{'activation_fn': 'relu',
+ 'batch_size': 20,
+ 'cond_label_size': 35476,
+ 'conditional': True,
+ 'data_dir': './data/',
+ 'dataset': 'TEMPERATURE',
+ 'device': device(type='cpu'),
+ 'eval_epochs': 1,
+ 'evaluate': False,
+ 'flip_toy_var_order': False,
+ 'generate': False,
+ 'hidden_size': 100,
+ 'input_dims': 17738,
+ 'input_order': 'sequential',
+ 'input_size': 17738,
+ 'log_interval': 10,
+ 'lr': 0.0001,
+ 'model': 'realnvp',
+ 'n_blocks': 5,
+ 'n_components': 1,
+ 'n_epochs': 200,
+ 'n_hidden': 1,
+ 'no_batch_norm': False,
+ 'no_cuda': False,
+ 'output_dir': './results/maf',
+ 'restore_file': None,
+ 'results_file': './results/maf/results.txt',
+ 'seed': 1,
+ 'start_epoch': 0,
+ 'train': True}
+RealNVP(
+  (net): FlowSequential(
+    (0): LinearMaskedCoupling(
+      (s_net): Sequential(
+        (0): Linear(in_features=53214, out_features=100, bias=True)
+        (1): Tanh()
+        (2): Linear(in_features=100, out_features=100, bias=True)
+        (3): Tanh()
+        (4): Linear(in_features=100, out_features=17738, bias=True)
+      )
+      (t_net): Sequential(
+        (0): Linear(in_features=53214, out_features=100, bias=True)
+        (1): ReLU()
+        (2): Linear(in_features=100, out_features=100, bias=True)
+        (3): ReLU()
+        (4): Linear(in_features=100, out_features=17738, bias=True)
+      )
+    )
+    (1): BatchNorm()
+    (2): LinearMaskedCoupling(
+      (s_net): Sequential(
+        (0): Linear(in_features=53214, out_features=100, bias=True)
+        (1): Tanh()
+        (2): Linear(in_features=100, out_features=100, bias=True)
+        (3): Tanh()
+        (4): Linear(in_features=100, out_features=17738, bias=True)
+      )
+      (t_net): Sequential(
+        (0): Linear(in_features=53214, out_features=100, bias=True)
+        (1): ReLU()
+        (2): Linear(in_features=100, out_features=100, bias=True)
+        (3): ReLU()
+        (4): Linear(in_features=100, out_features=17738, bias=True)
+      )
+    )
+    (3): BatchNorm()
+    (4): LinearMaskedCoupling(
+      (s_net): Sequential(
+        (0): Linear(in_features=53214, out_features=100, bias=True)
+        (1): Tanh()
+        (2): Linear(in_features=100, out_features=100, bias=True)
+        (3): Tanh()
+        (4): Linear(in_features=100, out_features=17738, bias=True)
+      )
+      (t_net): Sequential(
+        (0): Linear(in_features=53214, out_features=100, bias=True)
+        (1): ReLU()
+        (2): Linear(in_features=100, out_features=100, bias=True)
+        (3): ReLU()
+        (4): Linear(in_features=100, out_features=17738, bias=True)
+      )
+    )
+    (5): BatchNorm()
+    (6): LinearMaskedCoupling(
+      (s_net): Sequential(
+        (0): Linear(in_features=53214, out_features=100, bias=True)
+        (1): Tanh()
+        (2): Linear(in_features=100, out_features=100, bias=True)
+        (3): Tanh()
+        (4): Linear(in_features=100, out_features=17738, bias=True)
+      )
+      (t_net): Sequential(
+        (0): Linear(in_features=53214, out_features=100, bias=True)
+        (1): ReLU()
+        (2): Linear(in_features=100, out_features=100, bias=True)
+        (3): ReLU()
+        (4): Linear(in_features=100, out_features=17738, bias=True)
+      )
+    )
+    (7): BatchNorm()
+    (8): LinearMaskedCoupling(
+      (s_net): Sequential(
+        (0): Linear(in_features=53214, out_features=100, bias=True)
+        (1): Tanh()
+        (2): Linear(in_features=100, out_features=100, bias=True)
+        (3): Tanh()
+        (4): Linear(in_features=100, out_features=17738, bias=True)
+      )
+      (t_net): Sequential(
+        (0): Linear(in_features=53214, out_features=100, bias=True)
+        (1): ReLU()
+        (2): Linear(in_features=100, out_features=100, bias=True)
+        (3): ReLU()
+        (4): Linear(in_features=100, out_features=17738, bias=True)
+      )
+    )
+    (9): BatchNorm()
+  )
+)
+{'activation_fn': 'relu',
+ 'batch_size': 20,
+ 'cond_label_size': 35476,
+ 'conditional': True,
+ 'data_dir': './data/',
+ 'dataset': 'TEMPERATURE',
+ 'device': device(type='cpu'),
+ 'eval_epochs': 1,
+ 'evaluate': False,
+ 'flip_toy_var_order': False,
+ 'generate': False,
+ 'hidden_size': 100,
+ 'input_dims': 17738,
+ 'input_order': 'sequential',
+ 'input_size': 17738,
+ 'log_interval': 10,
+ 'lr': 0.0001,
+ 'model': 'maf',
+ 'n_blocks': 5,
+ 'n_components': 1,
+ 'n_epochs': 200,
+ 'n_hidden': 1,
+ 'no_batch_norm': False,
+ 'no_cuda': False,
+ 'output_dir': './results/maf',
+ 'restore_file': None,
+ 'results_file': './results/maf/results.txt',
+ 'seed': 1,
+ 'start_epoch': 0,
+ 'train': True}
+MAF(
+  (net): FlowSequential(
+    (0): MADE(
+      (net_input): MaskedLinear(in_features=17738, out_features=100, bias=True, cond_features=35476)
+      (net): Sequential(
+        (0): ReLU()
+        (1): MaskedLinear(in_features=100, out_features=100, bias=True)
+        (2): ReLU()
+        (3): MaskedLinear(in_features=100, out_features=35476, bias=True)
+      )
+    )
+    (1): BatchNorm()
+    (2): MADE(
+      (net_input): MaskedLinear(in_features=17738, out_features=100, bias=True, cond_features=35476)
+      (net): Sequential(
+        (0): ReLU()
+        (1): MaskedLinear(in_features=100, out_features=100, bias=True)
+        (2): ReLU()
+        (3): MaskedLinear(in_features=100, out_features=35476, bias=True)
+      )
+    )
+    (3): BatchNorm()
+    (4): MADE(
+      (net_input): MaskedLinear(in_features=17738, out_features=100, bias=True, cond_features=35476)
+      (net): Sequential(
+        (0): ReLU()
+        (1): MaskedLinear(in_features=100, out_features=100, bias=True)
+        (2): ReLU()
+        (3): MaskedLinear(in_features=100, out_features=35476, bias=True)
+      )
+    )
+    (5): BatchNorm()
+    (6): MADE(
+      (net_input): MaskedLinear(in_features=17738, out_features=100, bias=True, cond_features=35476)
+      (net): Sequential(
+        (0): ReLU()
+        (1): MaskedLinear(in_features=100, out_features=100, bias=True)
+        (2): ReLU()
+        (3): MaskedLinear(in_features=100, out_features=35476, bias=True)
+      )
+    )
+    (7): BatchNorm()
+    (8): MADE(
+      (net_input): MaskedLinear(in_features=17738, out_features=100, bias=True, cond_features=35476)
+      (net): Sequential(
+        (0): ReLU()
+        (1): MaskedLinear(in_features=100, out_features=100, bias=True)
+        (2): ReLU()
+        (3): MaskedLinear(in_features=100, out_features=35476, bias=True)
+      )
+    )
+    (9): BatchNorm()
+  )
+)
+Evaluate (epoch 0) -- logp(x) = -inf +/- nan
+{'activation_fn': 'relu',
+ 'batch_size': 20,
+ 'cond_label_size': 35476,
+ 'conditional': True,
+ 'data_dir': './data/',
+ 'dataset': 'TEMPERATURE',
+ 'device': device(type='cpu'),
+ 'eval_epochs': 1,
+ 'evaluate': False,
+ 'flip_toy_var_order': False,
+ 'generate': False,
+ 'hidden_size': 100,
+ 'input_dims': 17738,
+ 'input_order': 'sequential',
+ 'input_size': 17738,
+ 'log_interval': 10,
+ 'lr': 0.0001,
+ 'model': 'made',
+ 'n_blocks': 5,
+ 'n_components': 1,
+ 'n_epochs': 200,
+ 'n_hidden': 1,
+ 'no_batch_norm': False,
+ 'no_cuda': False,
+ 'output_dir': './results/maf',
+ 'restore_file': None,
+ 'results_file': './results/maf/results.txt',
+ 'seed': 1,
+ 'start_epoch': 0,
+ 'train': True}
+MADE(
+  (net_input): MaskedLinear(in_features=17738, out_features=100, bias=True, cond_features=35476)
+  (net): Sequential(
+    (0): ReLU()
+    (1): MaskedLinear(in_features=100, out_features=100, bias=True)
+    (2): ReLU()
+    (3): MaskedLinear(in_features=100, out_features=35476, bias=True)
+  )
+)
+Evaluate (epoch 0) -- logp(x) = -inf +/- nan
+Evaluate (epoch 1) -- logp(x) = -inf +/- nan
+{'activation_fn': 'relu',
+ 'batch_size': 20,
+ 'cond_label_size': 36,
+ 'conditional': True,
+ 'data_dir': './data/',
+ 'dataset': 'TEMPERATURE',
+ 'device': device(type='cpu'),
+ 'eval_epochs': 1,
+ 'evaluate': False,
+ 'flip_toy_var_order': False,
+ 'generate': False,
+ 'hidden_size': 100,
+ 'input_dims': 18,
+ 'input_order': 'sequential',
+ 'input_size': 18,
+ 'log_interval': 10,
+ 'lr': 0.0001,
+ 'model': 'made',
+ 'n_blocks': 5,
+ 'n_components': 1,
+ 'n_epochs': 200,
+ 'n_hidden': 1,
+ 'no_batch_norm': False,
+ 'no_cuda': False,
+ 'output_dir': './results/maf',
+ 'restore_file': None,
+ 'results_file': './results/maf/results.txt',
+ 'seed': 1,
+ 'start_epoch': 0,
+ 'train': True}
+MADE(
+  (net_input): MaskedLinear(in_features=18, out_features=100, bias=True, cond_features=36)
+  (net): Sequential(
+    (0): ReLU()
+    (1): MaskedLinear(in_features=100, out_features=100, bias=True)
+    (2): ReLU()
+    (3): MaskedLinear(in_features=100, out_features=36, bias=True)
+  )
+)
+{'activation_fn': 'relu',
+ 'batch_size': 20,
+ 'cond_label_size': 36,
+ 'conditional': True,
+ 'data_dir': './data/',
+ 'dataset': 'TEMPERATURE',
+ 'device': device(type='cpu'),
+ 'eval_epochs': 1,
+ 'evaluate': False,
+ 'flip_toy_var_order': False,
+ 'generate': False,
+ 'hidden_size': 100,
+ 'input_dims': 18,
+ 'input_order': 'sequential',
+ 'input_size': 18,
+ 'log_interval': 10,
+ 'lr': 0.0001,
+ 'model': 'made',
+ 'n_blocks': 5,
+ 'n_components': 1,
+ 'n_epochs': 200,
+ 'n_hidden': 1,
+ 'no_batch_norm': False,
+ 'no_cuda': False,
+ 'output_dir': './results/maf',
+ 'restore_file': None,
+ 'results_file': './results/maf/results.txt',
+ 'seed': 1,
+ 'start_epoch': 0,
+ 'train': True}
+MADE(
+  (net_input): MaskedLinear(in_features=18, out_features=100, bias=True, cond_features=36)
+  (net): Sequential(
+    (0): ReLU()
+    (1): MaskedLinear(in_features=100, out_features=100, bias=True)
+    (2): ReLU()
+    (3): MaskedLinear(in_features=100, out_features=36, bias=True)
+  )
+)
+Evaluate (epoch 0) -- logp(x) = -40.509 +/- 6.149
+Evaluate (epoch 1) -- logp(x) = -339.872 +/- 162.150
+{'activation_fn': 'relu',
+ 'batch_size': 20,
+ 'cond_label_size': 36,
+ 'conditional': True,
+ 'data_dir': './data/',
+ 'dataset': 'TEMPERATURE',
+ 'device': device(type='cpu'),
+ 'eval_epochs': 1,
+ 'evaluate': False,
+ 'flip_toy_var_order': False,
+ 'generate': False,
+ 'hidden_size': 100,
+ 'input_dims': 18,
+ 'input_order': 'sequential',
+ 'input_size': 18,
+ 'log_interval': 10,
+ 'lr': 0.0001,
+ 'model': 'made',
+ 'n_blocks': 5,
+ 'n_components': 1,
+ 'n_epochs': 200,
+ 'n_hidden': 1,
+ 'no_batch_norm': False,
+ 'no_cuda': False,
+ 'output_dir': './results/maf',
+ 'restore_file': None,
+ 'results_file': './results/maf/results.txt',
+ 'seed': 1,
+ 'start_epoch': 0,
+ 'train': True}
+MADE(
+  (net_input): MaskedLinear(in_features=18, out_features=100, bias=True, cond_features=36)
+  (net): Sequential(
+    (0): ReLU()
+    (1): MaskedLinear(in_features=100, out_features=100, bias=True)
+    (2): ReLU()
+    (3): MaskedLinear(in_features=100, out_features=36, bias=True)
+  )
+)
+Evaluate (epoch 0) -- logp(x) = -40.509 +/- 6.149
+Evaluate (epoch 1) -- logp(x) = -339.872 +/- 162.150
+Evaluate (epoch 2) -- logp(x) = -1399.229 +/- 928.015
+Evaluate (epoch 3) -- logp(x) = -1144.505 +/- 597.876
+Evaluate (epoch 4) -- logp(x) = -1294.360 +/- 648.620
+Evaluate (epoch 5) -- logp(x) = -1275.920 +/- 714.021
+Evaluate (epoch 6) -- logp(x) = -1008.516 +/- 571.205
+Evaluate (epoch 7) -- logp(x) = -854.170 +/- 430.869
+Evaluate (epoch 8) -- logp(x) = -724.189 +/- 368.183
+Evaluate (epoch 9) -- logp(x) = -691.586 +/- 368.890
+Evaluate (epoch 10) -- logp(x) = -282.885 +/- 119.115
+Evaluate (epoch 11) -- logp(x) = -196.014 +/- 73.651
+Evaluate (epoch 12) -- logp(x) = -158.004 +/- 61.647
+Evaluate (epoch 13) -- logp(x) = -138.687 +/- 55.879
+Evaluate (epoch 14) -- logp(x) = -102.586 +/- 33.595
+Evaluate (epoch 15) -- logp(x) = -108.588 +/- 38.249
+Evaluate (epoch 16) -- logp(x) = -115.196 +/- 40.492
+Evaluate (epoch 17) -- logp(x) = -130.355 +/- 49.478
+Evaluate (epoch 18) -- logp(x) = -124.827 +/- 47.517
+Evaluate (epoch 19) -- logp(x) = -132.088 +/- 57.496
+Evaluate (epoch 20) -- logp(x) = -140.948 +/- 64.179
+Evaluate (epoch 21) -- logp(x) = -140.984 +/- 58.958
+Evaluate (epoch 22) -- logp(x) = -143.419 +/- 52.384
+Evaluate (epoch 23) -- logp(x) = -123.550 +/- 41.508
+Evaluate (epoch 24) -- logp(x) = -119.875 +/- 38.964
+Evaluate (epoch 25) -- logp(x) = -107.923 +/- 28.869
+Evaluate (epoch 26) -- logp(x) = -115.723 +/- 29.336
+Evaluate (epoch 27) -- logp(x) = -90.776 +/- 21.571
+Evaluate (epoch 28) -- logp(x) = -80.429 +/- 17.197
+Evaluate (epoch 29) -- logp(x) = -88.115 +/- 18.757
+Evaluate (epoch 30) -- logp(x) = -71.870 +/- 13.607
+Evaluate (epoch 31) -- logp(x) = -78.258 +/- 15.290
+Evaluate (epoch 32) -- logp(x) = -71.673 +/- 13.132
+Evaluate (epoch 33) -- logp(x) = -76.658 +/- 15.196
+Evaluate (epoch 34) -- logp(x) = -70.201 +/- 12.889
+Evaluate (epoch 35) -- logp(x) = -65.966 +/- 11.595
+Evaluate (epoch 36) -- logp(x) = -86.007 +/- 18.803
+Evaluate (epoch 37) -- logp(x) = -70.967 +/- 13.453
+Evaluate (epoch 38) -- logp(x) = -57.091 +/- 9.785
+Evaluate (epoch 39) -- logp(x) = -57.229 +/- 9.616
+Evaluate (epoch 40) -- logp(x) = -61.302 +/- 10.910
+Evaluate (epoch 41) -- logp(x) = -61.294 +/- 10.341
+Evaluate (epoch 42) -- logp(x) = -62.976 +/- 11.221
+{'activation_fn': 'relu',
+ 'batch_size': 20,
+ 'cond_label_size': 36,
+ 'conditional': True,
+ 'data_dir': './data/',
+ 'dataset': 'TEMPERATURE',
+ 'device': device(type='cpu'),
+ 'eval_epochs': 1,
+ 'evaluate': False,
+ 'flip_toy_var_order': False,
+ 'generate': False,
+ 'hidden_size': 100,
+ 'input_dims': 18,
+ 'input_order': 'sequential',
+ 'input_size': 18,
+ 'log_interval': 10,
+ 'lr': 0.0001,
+ 'model': 'made',
+ 'n_blocks': 5,
+ 'n_components': 1,
+ 'n_epochs': 200,
+ 'n_hidden': 1,
+ 'no_batch_norm': False,
+ 'no_cuda': False,
+ 'output_dir': './results/maf',
+ 'restore_file': None,
+ 'results_file': './results/maf/results.txt',
+ 'seed': 1,
+ 'start_epoch': 0,
+ 'train': True}
+MADE(
+  (net_input): MaskedLinear(in_features=18, out_features=100, bias=True, cond_features=36)
+  (net): Sequential(
+    (0): ReLU()
+    (1): MaskedLinear(in_features=100, out_features=100, bias=True)
+    (2): ReLU()
+    (3): MaskedLinear(in_features=100, out_features=36, bias=True)
+  )
+)
+Evaluate (epoch 0) -- logp(x) = -40.509 +/- 6.149
+Evaluate (epoch 1) -- logp(x) = -339.872 +/- 162.150
+Evaluate (epoch 2) -- logp(x) = -1399.229 +/- 928.015
+Evaluate (epoch 3) -- logp(x) = -1144.505 +/- 597.876
+Evaluate (epoch 4) -- logp(x) = -1294.360 +/- 648.620
+Evaluate (epoch 5) -- logp(x) = -1275.920 +/- 714.021
+Evaluate (epoch 6) -- logp(x) = -1008.516 +/- 571.205
+Evaluate (epoch 7) -- logp(x) = -854.170 +/- 430.869
+{'activation_fn': 'relu',
+ 'batch_size': 20,
+ 'cond_label_size': 36,
+ 'conditional': True,
+ 'data_dir': './data/',
+ 'dataset': 'TEMPERATURE',
+ 'device': device(type='cpu'),
+ 'eval_epochs': 1,
+ 'evaluate': False,
+ 'flip_toy_var_order': False,
+ 'generate': False,
+ 'hidden_size': 100,
+ 'input_dims': 18,
+ 'input_order': 'sequential',
+ 'input_size': 18,
+ 'log_interval': 10,
+ 'lr': 0.0001,
+ 'model': 'made',
+ 'n_blocks': 5,
+ 'n_components': 1,
+ 'n_epochs': 200,
+ 'n_hidden': 1,
+ 'no_batch_norm': False,
+ 'no_cuda': False,
+ 'output_dir': './results/maf',
+ 'restore_file': None,
+ 'results_file': './results/maf/results.txt',
+ 'seed': 1,
+ 'start_epoch': 0,
+ 'train': True}
+MADE(
+  (net_input): MaskedLinear(in_features=18, out_features=100, bias=True, cond_features=36)
+  (net): Sequential(
+    (0): ReLU()
+    (1): MaskedLinear(in_features=100, out_features=100, bias=True)
+    (2): ReLU()
+    (3): MaskedLinear(in_features=100, out_features=36, bias=True)
+  )
+)
+Evaluate (epoch 0) -- logp(x) = -40.509 +/- 6.149
